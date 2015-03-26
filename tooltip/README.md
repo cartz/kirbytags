@@ -2,7 +2,7 @@
 
 ###made by Claus Artz @mydarktime
 
-(https://raw.githubusercontent.com/cartz/kirbytags/master/tooltip/tooltip.gif)
+!(https://raw.githubusercontent.com/cartz/kirbytags/master/tooltip/tooltip.gif)
 
 the complete tag could be called like
 
