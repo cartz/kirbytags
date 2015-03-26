@@ -1,0 +1,71 @@
+//  Kirby Tooptip
+//  made by Claus Artz @mydarktime
+//
+// the complete tag could be called like
+// 
+// (tooltip: text for hover text: the text you want to get displayed)
+
+// variables
+$tooltip-distance: 1.5em;
+$tooltip-triangle-width: 0.5em;
+$tooltip-font-size: 1em;
+$tooltip-link-color: #0000ff;
+$tooltip-hover-link-color: darken($tooltip-link-color, 25);
+$tooltip-font-color: #ffffff;
+$tooltip-background-color: #000000;
+
+
+// style the tooltip anchor
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+  border-bottom: 1px dotted $tooltip-link-color;
+  color: $tooltip-link-color;
+
+  &:after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 1.5em;
+    left: -1em;
+    min-width: 10em;
+    max-width: 30em;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    pointer-events: none;
+    font-size: $tooltip-font-size;
+    background-color: $tooltip-background-color;
+    color: $tooltip-font-color;
+    @include border-radius;
+  }
+
+  // this creates the little triangle
+  &:before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 5px;
+    bottom: $tooltip-distance - $tooltip-triangle-width;
+    border-left: $tooltip-triangle-width solid transparent;
+    border-right: $tooltip-triangle-width solid transparent;
+    border-top: $tooltip-triangle-width solid $tooltip-background-color;
+  }
+
+  &:before, &:after {
+    display: block;
+    visibility: hidden;
+    opacity: 0;  
+    transition: opacity 0.2s ease-out, margin 1.2s ease-out;
+  }
+    
+  &:hover, &:focus {
+    color: $tooltip-hover-link-color;
+
+    &:before, &:after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
