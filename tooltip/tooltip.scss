@@ -1,9 +1,9 @@
 //  Kirby Tooptip
 //  made by Claus Artz @mydarktime
 //
-// the complete tag could be called like
+//  the complete tag could be called like
 // 
-// (tooltip: text for hover text: the text you want to get displayed)
+//  (tooltip: text for hover text: the text you want to get displayed)
 
 // variables
 $tooltip-distance: 1.5em;
@@ -37,7 +37,6 @@ $tooltip-background-color: #000000;
     font-size: $tooltip-font-size;
     background-color: $tooltip-background-color;
     color: $tooltip-font-color;
-    @include border-radius;
   }
 
   // this creates the little triangle

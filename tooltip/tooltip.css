@@ -1,0 +1,55 @@
+/*
+Kirby Tooptip
+made by Claus Artz @mydarktime
+
+the complete tag could be called like
+ 
+(tooltip: text for hover text: the text you want to get displayed)
+*/
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+  border-bottom: 1px dotted #0000ff;
+  color: #0000ff;
+}
+.tooltip:after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 1.5em;
+  left: -1em;
+  min-width: 10em;
+  max-width: 30em;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  pointer-events: none;
+  font-size: 1em;
+  background-color: #000000;
+  color: #ffffff;
+}
+.tooltip:before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 5px;
+  bottom: 1em;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.5em solid #000000;
+}
+.tooltip:before, .tooltip:after {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-out, margin 1.2s ease-out;
+}
+.tooltip:hover, .tooltip:focus {
+  color: navy;
+}
+.tooltip:hover:before, .tooltip:hover:after, .tooltip:focus:before, .tooltip:focus:after {
+  opacity: 1;
+  visibility: visible;
+}
